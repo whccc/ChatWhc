@@ -15,11 +15,11 @@ const Style = StyleSheet.create({
     maxWidth: 600,
   },
   Img: {
-    height: 140,
-    width: 140,
+    height: 180,
+    width: 180,
     marginBottom: 10,
     alignSelf: "center",
-    borderRadius: 0,
+    borderRadius: 100,
   },
   Input: {
     borderColor: "#2F484F",
