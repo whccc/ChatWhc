@@ -10,7 +10,6 @@ import {
 import Style from '../StylesScreen/ScreenRegisterStyle';
 import useUser from '../hooks/useUser';
 import * as ImagePicker from 'expo-image-picker';
-import Avatar from '../assets/Person.png';
 import { GaleryAndCamera } from '../components/GaleryAndCamera';
 import { ModalComponent } from '../components/Modal';
 
