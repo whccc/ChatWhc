@@ -1,7 +1,7 @@
-import React from "react";
-import Icon from "react-native-vector-icons/FontAwesome";
-import { View, TextInput } from "react-native";
-import Style from "./styles";
+import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { View, TextInput } from 'react-native';
+import Style from './styles';
 export const SendMessage = () => {
   return (
     <View style={Style.Container}>
@@ -11,7 +11,7 @@ export const SendMessage = () => {
           multiline={true}
           placeholderTextColor="#ffff"
           placeholder="Mensaje..."
-          selectionColor={"#ffff"}
+          selectionColor={'#ffff'}
         />
       </View>
       <View style={Style.ContainerSend}>

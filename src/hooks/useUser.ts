@@ -1,5 +1,5 @@
-import axios from "axios";
-import { URL_API } from "../VariablesDeEntorno";
+import axios from 'axios';
+import { URL_API } from '../VariablesDeEntorno';
 
 interface IUser {
   blobImageUser: string;
@@ -18,7 +18,7 @@ const useUser = () => {
     blobImageUser,
     strNames,
     strUser,
-    strPassword,
+    strPassword
   }: IUser) => {
     //=====================================
     //ENVIO DE LA DATA DEL USUARIO A CREAR
@@ -27,7 +27,7 @@ const useUser = () => {
       blobImageUser,
       strNameAndLastName: strNames,
       strUser,
-      strPassword,
+      strPassword
     });
     if (Result.status === 200) {
       return true;

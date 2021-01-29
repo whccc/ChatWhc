@@ -1,8 +1,8 @@
-import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import IconAntDesign from "react-native-vector-icons/AntDesign";
-import IconEntypo from "react-native-vector-icons/Entypo";
-import Styles from "./styles";
+import React from 'react';
+import { Text, View, TouchableOpacity } from 'react-native';
+import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import IconEntypo from 'react-native-vector-icons/Entypo';
+import Styles from './styles';
 
 export const GaleryAndCamera: React.FC<{
   OpenImagePickerAsync: () => void;

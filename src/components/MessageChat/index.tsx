@@ -1,7 +1,7 @@
-import React from "react";
-import { Text, View, Image } from "react-native";
-import Style from "./styles";
-import Person from "../../assets/Person.png";
+import React from 'react';
+import { Text, View, Image } from 'react-native';
+import Style from './styles';
+import Person from '../../assets/Person.png';
 export const ContainerMessage: React.FC<{
   TextMessage: string;
   Direction: string;
@@ -11,14 +11,14 @@ export const ContainerMessage: React.FC<{
     <View
       style={{
         alignSelf: Direction,
-        ...Style.Container,
+        ...Style.Container
       }}
     >
-      <Image style={Style.Img} source={Person} resizeMode={"contain"} />
+      <Image style={Style.Img} source={Person} resizeMode={'contain'} />
       <View
         style={{
           ...Style.ContainerMessage,
-          backgroundColor: `${backgroundColorContainer}`,
+          backgroundColor: `${backgroundColorContainer}`
         }}
       >
         <Text style={Style.TextPersonMessage}>

@@ -1,6 +1,6 @@
-import React from "react";
-import { Modal, StyleSheet, View, TouchableOpacity } from "react-native";
-import IconFontAweson from "react-native-vector-icons/FontAwesome";
+import React from 'react';
+import { Modal, StyleSheet, View, TouchableOpacity } from 'react-native';
+import IconFontAweson from 'react-native-vector-icons/FontAwesome';
 
 export const ModalComponent: React.FC<{
   children: React.ReactNode;
@@ -28,21 +28,21 @@ export const ModalComponent: React.FC<{
 const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0,0,0,.5)",
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,.5)'
   },
   ViewData: {
     borderWidth: 1,
-    backgroundColor: "#ffff",
+    backgroundColor: '#ffff',
     borderRadius: 10,
     padding: 10,
-    position: "relative",
+    position: 'relative'
   },
   ViewCloseModal: {
-    alignItems: "flex-end",
-    borderBottomColor: "#2F484F",
+    alignItems: 'flex-end',
+    borderBottomColor: '#2F484F',
     borderBottomWidth: 0.5,
-    marginBottom: 5,
-  },
+    marginBottom: 5
+  }
 });
