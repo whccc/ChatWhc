@@ -1,29 +1,28 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   TextInput,
   Image,
   View,
   TouchableOpacity,
-  Text,
-} from "react-native";
-import Style from "../StylesScreen/ScreenRegisterStyle";
-import useUser from "../hooks/useUser";
-import * as ImagePicker from "expo-image-picker";
-import Avatar from "../assets/Person.png";
-import { GaleryAndCamera } from "../components/GaleryAndCamera";
-import { ModalComponent } from "../components/Modal";
+  Text
+} from 'react-native';
+import Style from '../StylesScreen/ScreenRegisterStyle';
+import useUser from '../hooks/useUser';
+import * as ImagePicker from 'expo-image-picker';
+import { GaleryAndCamera } from '../components/GaleryAndCamera';
+import { ModalComponent } from '../components/Modal';
 
 export const ScreenRegister: React.FC<{ navigation: any }> = ({
-  navigation,
+  navigation
 }) => {
-  const [strNames, setStrNames] = useState("");
-  const [strUser, setStrUser] = useState("");
-  const [strPassword, setStrPassword] = useState("");
+  const [strNames, setStrNames] = useState('');
+  const [strUser, setStrUser] = useState('');
+  const [strPassword, setStrPassword] = useState('');
   const [blnShowModal, setBlnShowModal] = useState(false);
   const [ImageUri, setImageUri] = useState({
-    Uri: "",
-    Base64: "",
+    Uri: '',
+    Base64: ''
   });
   //HOOK
   const { CreateUserHookAsync } = useUser();
@@ -31,20 +30,20 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
   //VALIDANDO DATA DEL FORMULARIO DEL USUARIO
   //==========================================
   const ValidateData = () => {
-    if (ImageUri.Uri === "") {
-      alert("Seleccione una foto.");
+    if (ImageUri.Uri === '') {
+      alert('Seleccione una foto.');
       return false;
     }
-    if (strNames === "") {
-      alert("Digite su nombre.");
+    if (strNames === '') {
+      alert('Digite su nombre.');
       return false;
     }
-    if (strUser === "") {
-      alert("Digite su usuario.");
+    if (strUser === '') {
+      alert('Digite su usuario.');
       return false;
     }
-    if (strPassword === "") {
-      alert("Digite su contraseña.");
+    if (strPassword === '') {
+      alert('Digite su contraseña.');
       return false;
     }
 
@@ -56,11 +55,14 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
   const OpenCameraAsync = async () => {
     let CameraAsync = await ImagePicker.launchCameraAsync({
       base64: true,
+      allowsEditing: true,
+      aspect: [4, 5],
+      quality: 1
     });
     if (!CameraAsync.cancelled) {
       setImageUri({
         Uri: CameraAsync.uri,
-        Base64: CameraAsync.base64 === undefined ? "" : CameraAsync.base64,
+        Base64: CameraAsync.base64 === undefined ? '' : CameraAsync.base64
       });
       setBlnShowModal(false);
     }
@@ -71,11 +73,14 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
   const OpenImagePickerAsync = async () => {
     let GaleryAsync = await ImagePicker.launchImageLibraryAsync({
       base64: true,
+      allowsEditing: true,
+      aspect: [4, 5],
+      quality: 1
     });
     if (!GaleryAsync.cancelled) {
       setImageUri({
         Uri: GaleryAsync.uri,
-        Base64: GaleryAsync.base64 === undefined ? "" : GaleryAsync.base64,
+        Base64: GaleryAsync.base64 === undefined ? '' : GaleryAsync.base64
       });
       setBlnShowModal(false);
     }
@@ -91,16 +96,16 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
       blobImageUser: ImageUri.Base64,
       strNames,
       strUser,
-      strPassword,
+      strPassword
     };
     if (await CreateUserHookAsync(JsonDataUser)) {
-      alert("Usuario creado con éxito.");
-      setStrNames("");
-      setStrUser("");
-      setStrPassword("");
-      setImageUri({ Uri: "", Base64: "" });
+      alert('Usuario creado con éxito.');
+      setStrNames('');
+      setStrUser('');
+      setStrPassword('');
+      setImageUri({ Uri: '', Base64: '' });
     } else {
-      alert("Error en el servidor.");
+      alert('Error en el servidor.');
     }
   };
   return (
@@ -114,16 +119,16 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
           <Image
             source={{
               uri:
-                ImageUri.Uri === ""
-                  ? "https://gravatar.com/avatar/af020c667a3bd539b1ec582b322f7379?s=400&d=robohash&r=x"
-                  : ImageUri.Uri,
+                ImageUri.Uri === ''
+                  ? 'https://gravatar.com/avatar/af020c667a3bd539b1ec582b322f7379?s=400&d=robohash&r=x'
+                  : ImageUri.Uri
             }}
             style={Style.Img}
           />
         </TouchableOpacity>
         <TextInput
           style={Style.Input}
-          onChangeText={(e) => setStrNames(e.trim())}
+          onChangeText={(e) => setStrNames(e)}
           value={strNames}
           placeholder="Nombres"
         />
@@ -146,7 +151,7 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Login");
+              navigation.navigate('Login');
             }}
             style={Style.Button}
           >
