@@ -3,7 +3,7 @@ import { StyleSheet, Platform } from 'react-native';
 const Style = StyleSheet.create({
   Container: {
     backgroundColor: '#48AF2F',
-    padding: 5,
+    padding: 10,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -14,16 +14,16 @@ const Style = StyleSheet.create({
     elevation: 24
   },
   ContainerImg: {
-    flex: 1,
-    alignItems: 'flex-start'
+    flex: 1
   },
   Img: {
     width: 50,
-    height: 50
+    height: 50,
+    borderRadius: 1000
   },
   ContainerConnect: {
-    flex: 1,
-    alignItems: 'flex-end'
+    display: 'flex',
+    flexDirection: 'row'
   }
 });
 

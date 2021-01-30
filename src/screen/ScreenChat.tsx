@@ -3,6 +3,7 @@ import { MenuChat } from '../components/MenuChat';
 import { ContainerMessage } from '../components/MessageChat';
 import { SendMessage } from '../components/SendMessage';
 import { View, SafeAreaView, Text, ScrollView } from 'react-native';
+import { IUserData } from '../Interfaces';
 import Style from '../StylesScreen/ScreenChatStyle';
 
 const Json = [
@@ -113,11 +114,18 @@ const Json = [
     backgroundColorContainer: '#51BFF0'
   }
 ];
-export const ScreenChat = () => {
+export const ScreenChat: React.FC<{
+  navigation: any;
+  LogOutUserAsync: () => Promise<void>;
+  JsonDataUser: IUserData;
+}> = ({ navigation, LogOutUserAsync, JsonDataUser }) => {
   return (
     <SafeAreaView style={Style.Container}>
       <View>
-        <MenuChat />
+        <MenuChat
+          LogOutUserAsync={LogOutUserAsync}
+          JsonDataUser={JsonDataUser}
+        />
       </View>
       <View style={Style.ContainerChat}>
         <ScrollView>

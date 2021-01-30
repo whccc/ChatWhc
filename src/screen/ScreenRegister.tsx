@@ -54,7 +54,10 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
   //===============
   const OpenCameraAsync = async () => {
     let CameraAsync = await ImagePicker.launchCameraAsync({
-      base64: true
+      base64: true,
+      allowsEditing: true,
+      aspect: [4, 5],
+      quality: 1
     });
     if (!CameraAsync.cancelled) {
       setImageUri({
@@ -69,7 +72,10 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
   //==================================
   const OpenImagePickerAsync = async () => {
     let GaleryAsync = await ImagePicker.launchImageLibraryAsync({
-      base64: true
+      base64: true,
+      allowsEditing: true,
+      aspect: [4, 5],
+      quality: 1
     });
     if (!GaleryAsync.cancelled) {
       setImageUri({
@@ -122,7 +128,7 @@ export const ScreenRegister: React.FC<{ navigation: any }> = ({
         </TouchableOpacity>
         <TextInput
           style={Style.Input}
-          onChangeText={(e) => setStrNames(e.trim())}
+          onChangeText={(e) => setStrNames(e)}
           value={strNames}
           placeholder="Nombres"
         />
