@@ -11,3 +11,13 @@ export interface IUserData {
   strUser?: string;
   stPassword?: string;
 }
+
+export interface IJsonDataMessage {
+  id: number;
+  TextMessage: string;
+  strUserName: string;
+  blobImageUser: string;
+  Direction: string;
+  backgroundColorContainer: string;
+  TypeMessage: string;
+}
