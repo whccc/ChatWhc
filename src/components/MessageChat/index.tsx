@@ -6,7 +6,15 @@ export const ContainerMessage: React.FC<{
   TextMessage: string;
   Direction: string;
   backgroundColorContainer: string;
-}> = ({ TextMessage, Direction, backgroundColorContainer }) => {
+  strUserName: string;
+  blobImageUser: string;
+}> = ({
+  TextMessage,
+  Direction,
+  backgroundColorContainer,
+  strUserName,
+  blobImageUser
+}) => {
   return (
     <View
       style={{
@@ -14,16 +22,18 @@ export const ContainerMessage: React.FC<{
         ...Style.Container
       }}
     >
-      <Image style={Style.Img} source={Person} resizeMode={'contain'} />
+      <Image
+        style={Style.Img}
+        source={{ uri: blobImageUser }}
+        resizeMode={'cover'}
+      />
       <View
         style={{
           ...Style.ContainerMessage,
           backgroundColor: `${backgroundColorContainer}`
         }}
       >
-        <Text style={Style.TextPersonMessage}>
-          Wilson Herney Castro Cabrear
-        </Text>
+        <Text style={Style.TextPersonMessage}>{strUserName}</Text>
         <Text style={Style.Text}>{TextMessage}</Text>
       </View>
     </View>

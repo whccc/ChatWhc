@@ -16,7 +16,8 @@ const Style = StyleSheet.create({
   Img: {
     width: 50,
     height: 50,
-    marginRight: 5
+    marginRight: 5,
+    borderRadius: 100
   },
   ContainerMessage: {
     padding: 10,
